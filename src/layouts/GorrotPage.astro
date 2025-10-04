@@ -1,0 +1,34 @@
+---
+import HeroHeader from "../components/HeroHeader.astro"
+import HeadDescription from "../components/HeadDescription.astro"
+import ImageStrip from "../components/ImageStrip.astro"
+import NavBar from "../components/NavBar.astro"
+import GorrotHeader from "../components/GorrotHeader.astro"
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Fastiloose! - Gorrot</title>
+	</head>
+	<body>
+        <NavBar/>
+		<GorrotHeader/>
+        <ImageStrip />
+        <HeadDescription/>
+        
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+</style>
