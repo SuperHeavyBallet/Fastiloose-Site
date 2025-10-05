@@ -1,0 +1,26 @@
+{
+    "rules": [
+      {
+        "title": "Fastiloose!",
+        "content": [
+          "Fastiloose! is a lightweight skirmish engine that invites customisation. It’s fast to learn, quick to play, and easy to adapt. Bring a pen, paper, and a die. That’s all you need!"
+        ]
+      },
+      {
+        "title": "Intro",
+        "content": [
+          "Fastiloose! is the base ruleset for a 2 player, grid-based skirmish game built for small teams of fighters. It’s designed to avoid the lumbering pace of traditional, army-scale wargames and instead lean towards compact, tactical battles where every character matters.",
+          "Games are quick to set up and fast to play. Think of a sharp, decisive skirmish during a lunch break rather than a half-day campaign. The rules are portable and piece-agnostic. You don’t need a full, physical army or boxed set to begin.",
+          "At its core, all you need are these rules, a few sheets of paper, character tokens and a single six-sided die (d6). On top of this framework, optional Expansions and Modifier Decks can be added. These introduce options like the Fate Deck, Extension Classes, Terrain or Game Modes that shift the flow of play, allowing you to scale the depth and variety of each game."
+        ]
+      },
+      {
+        "title": "Barebone Mechanics",
+        "content": [
+            "This is the barebones game, without any add ons. No Fate Deck, No Modifiers or Extensions."
+        ]
+      }
+
+    ]
+  }
+  

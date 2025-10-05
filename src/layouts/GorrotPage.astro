@@ -17,9 +17,12 @@ import GorrotHeader from "../components/GorrotHeader.astro"
 	</head>
 	<body>
         <NavBar/>
-		<GorrotHeader/>
+        <div class="gorrot-main">
+            <GorrotHeader/>
         <ImageStrip />
         <HeadDescription/>
+        </div>
+		
         
 	</body>
 </html>
@@ -31,4 +34,11 @@ import GorrotHeader from "../components/GorrotHeader.astro"
 		width: 100%;
 		height: 100%;
 	}
+
+    .gorrot-main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 </style>

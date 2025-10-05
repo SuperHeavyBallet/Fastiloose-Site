@@ -1,6 +1,7 @@
 ---
 import NavBar from "../components/NavBar.astro"
 import RulesSideMenu from "../components/RulesSideMenu.astro"
+import RulesTextSection from "../components/RulesTextSection.astro"
 ---
 
 <!doctype html>
@@ -14,9 +15,16 @@ import RulesSideMenu from "../components/RulesSideMenu.astro"
 	</head>
 	<body>
         <NavBar/>
-		<div>
-            <RulesSideMenu/>
+
+		<div class="rule-section">
+            <div class="side-menu">
+                <RulesSideMenu  />
             </div>
+           
+            <div class="rule-text-area">
+            <RulesTextSection/>
+        </div>
+        </div>
         
 	</body>
 </html>
@@ -27,5 +35,36 @@ import RulesSideMenu from "../components/RulesSideMenu.astro"
 		margin: 0;
 		width: 100%;
 		height: 100%;
+        display: block;
+        
+
+ 
 	}
+
+    .rule-section{
+        display: grid;
+        grid-template-columns: 260px minmax(0, 1fr); /* explicit sidebar + stretchy content */
+        column-gap: 2rem;
+        width: 100%;
+
+        /* optional: max-width for readable line length */
+        /* max-width: 1200px; margin: 0 auto; */
+    }
+
+    .side-menu{
+        
+       
+        
+        
+        border: 1px solid black;
+    }
+
+    .rule-text-area{
+            min-width: 0;        /* critical so long content doesn’t force overflow */
+    /* Use padding instead of big margins if you like */
+    padding-right: 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
 </style>

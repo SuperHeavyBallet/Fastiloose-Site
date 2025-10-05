@@ -1,0 +1,28 @@
+---
+import coreRules from "../assets/content/core_rules.json";
+
+const sections = coreRules.rules.map((r, idx) => {
+  const slug = r.title.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
+  return { ...r, id: `section-${idx + 1}-${slug}` };
+});
+
+const NAME_RX = /(Fastiloose!?)/gi;
+const NAME_RX_EXACT = /^Fastiloose!?$/i;
+---
+
+<main class="rule-display">
+  {sections.map((s) => (
+    <section id={s.id}>
+      <h2>{s.title}</h2>
+      {s.content.map((para) => (
+        <p>
+          {
+            para.split(NAME_RX).map((chunk) =>
+              NAME_RX_EXACT.test(chunk) ? <strong>{chunk}</strong> : chunk
+            )
+          }
+        </p>
+      ))}
+    </section>
+  ))}
+</main>

@@ -1,14 +1,24 @@
-<div>
-    <list>
-        <li>Text</li>
-        <li>Text</li>
-        <li>Text</li>
-        <li>Text</li>
-        <li>Text</li>
-        <li>Text</li>
-        <li>Text</li>
-        <li>Text</li>
-        <li>Text</li>
-        <li>Text</li>
-    </list>
-</div>
+---
+import coreRules from "../assets/content/core_rules.json";
+
+// Make nice, stable IDs for anchors/links
+const sections = coreRules.rules.map((r, idx) => {
+  const slug =
+    r.title
+      .toLowerCase()
+      .replace(/\s+/g, "-")
+      .replace(/[^a-z0-9-]/g, "");
+  return { ...r, id: `section-${idx + 1}-${slug}` };
+});
+---
+
+<!-- Optional: build a side menu from the same data -->
+
+
+<nav class="side-menu">
+    <ul>
+      {sections.map((s) => (
+        <li><a href={`#${s.id}`}>{s.title}</a></li>
+      ))}
+    </ul>
+  </nav>
