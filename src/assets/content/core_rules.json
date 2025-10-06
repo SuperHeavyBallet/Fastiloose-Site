@@ -2,25 +2,68 @@
     "rules": [
       {
         "title": "Fastiloose!",
-        "content": [
-          "Fastiloose! is a lightweight skirmish engine that invites customisation. It’s fast to learn, quick to play, and easy to adapt. Bring a pen, paper, and a die. That’s all you need!"
-        ]
+      "blocks": [
+        { "type": "h3", "text": "Fastiloose!" },
+        { "type": "p",  "text": "Fastiloose! is a lightweight skirmish engine that invites customisation. It’s fast to learn, quick to play, and easy to adapt. Bring a pen, paper, and a die. That’s all you need!" }
+      ]
       },
       {
         "title": "Intro",
-        "content": [
-          "Fastiloose! is the base ruleset for a 2 player, grid-based skirmish game built for small teams of fighters. It’s designed to avoid the lumbering pace of traditional, army-scale wargames and instead lean towards compact, tactical battles where every character matters.",
-          "Games are quick to set up and fast to play. Think of a sharp, decisive skirmish during a lunch break rather than a half-day campaign. The rules are portable and piece-agnostic. You don’t need a full, physical army or boxed set to begin.",
-          "At its core, all you need are these rules, a few sheets of paper, character tokens and a single six-sided die (d6). On top of this framework, optional Expansions and Modifier Decks can be added. These introduce options like the Fate Deck, Extension Classes, Terrain or Game Modes that shift the flow of play, allowing you to scale the depth and variety of each game."
+        "blocks": [
+            { "type": "p",  "text": "Fastiloose! is the base ruleset for a 2 player, grid-based skirmish game built for small teams of fighters. It’s designed to avoid the lumbering pace of traditional, army-scale wargames and instead lean towards compact, tactical battles where every character matters." },
+            { "type": "p",  "text": "Games are quick to set up and fast to play. Think of a sharp, decisive skirmish during a lunch break rather than a half-day campaign. The rules are portable and piece-agnostic. You don’t need a full, physical army or boxed set to begin." },
+            { "type": "p",  "text": "At its core, all you need are these rules, a few sheets of paper, character tokens and a single six-sided die (d6). On top of this framework, optional Expansions and Modifier Decks can be added. These introduce options like the Fate Deck, Extension Classes, Terrain or Game Modes that shift the flow of play, allowing you to scale the depth and variety of each game." }
         ]
       },
       {
         "title": "Barebone Mechanics",
-        "content": [
-            "This is the barebones game, without any add ons. No Fate Deck, No Modifiers or Extensions."
+        "blocks": [
+            { "type": "p",  "text": "This is the barebones game, without any add ons. No Fate Deck, No Modifiers or Extensions." },
+            { "type": "h3",  "text": "Setup:" },
+            { "type": "ul", "items": ["Battlefield: 8x8 grid(Chessboard)", "Teams: 3 fighters per side (choose from Base Classes)", "No Terrain, No Fate Deck"] },
+            { "type" : "h3", "text" : "Definition of a Full Round:"},
+            { "type": "ul", "items": ["Leading Movement Phase", "Following Movement Phase", "Leading Combat Phase", "Following Combat Phase", "End of Round"] },
+            { "type" : "h3", "text" : "Round Order Decision:"},
+            { "type": "ul", "items": ["Decide round order(Leading and Following) via coin flip or d6 roll: 1-3 vs 4-6."] },
+            { "type" : "h3", "text" : "Movement Phase:"},
+            { "type": "ul", "items": ["Each fighter may move up to MOV squares (orthogonal only; no diagonals)"] },
+            { "type" : "h3", "text" : "Combat Phase:"},
+            { "type": "ul", "items": ["Each fighter may check if any enemies targets fall within their RANGE (orthogonal only; no diagonals)", "If the target is within RANGE, the attacker rolls D6 + HIT", "The target rolls D6 + DEF", "If the attacker’s total is higher, the attack succeeds → deal DAMAGE to the target’s HEALTH", "If the attacker’s total is lower, the attack fails → no effect", "Ties favour the attacker"] },
+            { "type" : "h3", "text" : "Death:"},
+            { "type" : "ul", "items" : ["At HEALTH 0, remove the fighter"]},
+            { "type" : "h3", "text" : "Win Conditions:"},
+            { "type" : "ul", "items" : ["Eliminate all enemy fighters"]},
+            { "type": "p",  "text": "That's it." },
+            { "type": "p",  "text": "This is Fastiloose! in its purest form: a pocket-sized skirmish game built for immediacy and replay. Everything else is a fancy bolt-on, easily stripped back to these simple roots." }
+        ]
+      },
+      {
+        "title" : "Hacking",
+        "blocks" : [
+            { "type": "p",  "text": "Fastiloose! is open for hacking." },
+            { "type": "p",  "text": "Use the rules however you like, just don’t call it Fastiloose! unless you’ve kept the core intact." }
+        ]
+      },
+      {
+        "title" : "Gameplay Details",
+        "blocks" : [
+            { "type" : "h3", "text" : "Battlefield Basics"},
+            { "type": "p",  "text": "Fastiloose! is a 2 player game played on a square-based grid." },
+            { "type" : "ul", "items" : ["8x8(chessboard) is the standard-reference,  but any drawn grid will work.", "For quick, balanced games, a square battlefield is simplest, but you can experiment with custom-shaped maps for variant play."]},
+            { "type" : "img", "src" : "./src/assets/images/8x8.png"},
+            { "type" : "img", "src" : "./src/assets/images/8x8.png"}
         ]
       }
 
     ]
   }
-  
+
+
+
+
+
+
+
+
+
+
