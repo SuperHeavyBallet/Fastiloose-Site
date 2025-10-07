@@ -1,44 +1,43 @@
 ---
-import HeroHeader from "../components/HeroHeader.astro"
-import HeadDescription from "../components/HeadDescription.astro"
-import ImageStrip from "../components/ImageStrip.astro"
-import NavBar from "../components/NavBar.astro"
-import GorrotHeader from "../components/GorrotHeader.astro"
+import HeroHeader from "../components/HeroHeader.astro";
+import HeadDescription from "../components/HeadDescription.astro";
+import ImageStrip from "../components/ImageStrip.astro";
+import NavBar from "../components/NavBar.astro";
+import GorrotHeader from "../components/GorrotHeader.astro";
+import "../fonts.css";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Fastiloose! - Gorrot</title>
-	</head>
-	<body>
-        <NavBar/>
-        <div class="gorrot-main">
-            <GorrotHeader/>
-        <ImageStrip />
-        <HeadDescription/>
-        </div>
-		
-        
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Fastiloose! - Gorrot</title>
+  </head>
+  <body>
+    <NavBar />
+    <div class="gorrot-main">
+      <GorrotHeader />
+      <ImageStrip />
+      <HeadDescription />
+    </div>
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 
-    .gorrot-main{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+  .gorrot-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 </style>
