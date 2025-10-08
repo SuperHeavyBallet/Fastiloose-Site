@@ -51,7 +51,29 @@
             { "type": "p",  "text": "Fastiloose! is a 2 player game played on a square-based grid." },
             { "type" : "ul", "items" : ["8x8(chessboard) is the standard-reference,  but any drawn grid will work.", "For quick, balanced games, a square battlefield is simplest, but you can experiment with custom-shaped maps for variant play."]},
             { "type" : "img", "src" : "./src/assets/images/8x8.png"},
-            { "type" : "img", "src" : "./src/assets/images/8x8.png"}
+            { "type" : "img", "src" : "./src/assets/images/8x8.png"},
+            { "type" : "h3", "text" : "Team Size and Shape"},
+            { "type" : "ul", "items" : ["Each player builds a team from the Base Classes (8 total)", 
+              "The default team size is 3 fighters, which on an 8×8 grid produces a fast, ~30-minute skirmish",
+              "Teams can be expanded freely for larger battles",
+              "You can field duplicates of the same base classes"]},
+              { "type" : "img", "src" : "./src/assets/images/ExampleTeam.png"},
+              { "type" : "h3", "text" : "Fighter Stats"},
+              { "type": "p",  "text": "Every fighter has a card with its stats:" },
+              { "type" : "img", "src" : "./src/assets/images/ExampleClass.png"},
+              { "type" : "ul", "items" : ["HEALTH: Starting health amount",
+                "MOV: Maximum movement distance per Movement Phase",
+                "HIT: Attack accuracy; added to a d6 roll during Combat Phase",
+                "DEF: Defense rating; added to a d6 roll when defending",
+                "DAMAGE: Amount of HEALTH lost by the target on a successful hit",
+                "RANGE: Maximum attack distance in one Combat Phase",
+                "AREA: Shape of the attack."]},
+              { "type": "p",  "text": "Types of AREA:" },
+              { "type" : "ul", "items" : ["SINGLE - Hits one square",
+                "SPLASH - Hits one square plus the four orthogonal adjacent squares (N, E, S, W)",
+                "MIXED - The fighter may choose between SINGLE or SPLASH per attack"]}
+
+
         ]
       }
 
