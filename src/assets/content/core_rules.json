@@ -19,22 +19,22 @@
         "title": "Barebone Mechanics",
         "blocks": [
             { "type": "p",  "text": "This is the barebones game, without any add ons. No Fate Deck, No Modifiers or Extensions." },
-            { "type": "h3",  "text": "Setup:" },
-            { "type": "ul", "items": ["Battlefield: 8x8 grid(Chessboard)", "Teams: 3 fighters per side (choose from Base Classes)", "No Terrain, No Fate Deck"] },
-            { "type" : "h3", "text" : "Definition of a Full Round:"},
+            { "type": "h3",  "text": "Setup" },
+            { "type": "ul", "items": ["Battlefield : 8x8 grid(Chessboard)", "Teams : 3 fighters per side (choose from Base Classes)", "No Terrain, No Fate Deck"] },
+            { "type" : "h3", "text" : "Definition of a Full Round"},
             { "type": "ul", "items": ["Leading Movement Phase", "Following Movement Phase", "Leading Combat Phase", "Following Combat Phase", "End of Round"] },
-            { "type" : "h3", "text" : "Round Order Decision:"},
-            { "type": "ul", "items": ["Decide round order(Leading and Following) via coin flip or d6 roll: 1-3 vs 4-6."] },
-            { "type" : "h3", "text" : "Movement Phase:"},
+            { "type" : "h3", "text" : "Round Order Decision"},
+            { "type": "ul", "items": ["Decide round order(Leading and Following) via coin flip or d6 roll : 1-3 vs 4-6."] },
+            { "type" : "h3", "text" : "Movement Phase"},
             { "type": "ul", "items": ["Each fighter may move up to MOV squares (orthogonal only; no diagonals)"] },
-            { "type" : "h3", "text" : "Combat Phase:"},
+            { "type" : "h3", "text" : "Combat Phase"},
             { "type": "ul", "items": ["Each fighter may check if any enemies targets fall within their RANGE (orthogonal only; no diagonals)", "If the target is within RANGE, the attacker rolls D6 + HIT", "The target rolls D6 + DEF", "If the attacker’s total is higher, the attack succeeds → deal DAMAGE to the target’s HEALTH", "If the attacker’s total is lower, the attack fails → no effect", "Ties favour the attacker"] },
-            { "type" : "h3", "text" : "Death:"},
+            { "type" : "h3", "text" : "Death"},
             { "type" : "ul", "items" : ["At HEALTH 0, remove the fighter"]},
-            { "type" : "h3", "text" : "Win Conditions:"},
+            { "type" : "h3", "text" : "Win Conditions"},
             { "type" : "ul", "items" : ["Eliminate all enemy fighters"]},
             { "type": "p",  "text": "That's it." },
-            { "type": "p",  "text": "This is Fastiloose! in its purest form: a pocket-sized skirmish game built for immediacy and replay. Everything else is a fancy bolt-on, easily stripped back to these simple roots." }
+            { "type": "p",  "text": "This is Fastiloose! in its purest form. A pocket-sized skirmish game built for immediacy and replay. Everything else is a fancy bolt-on, easily stripped back to these simple roots." }
         ]
       },
       {
@@ -59,21 +59,83 @@
               "You can field duplicates of the same base classes"]},
               { "type" : "img", "src" : "./src/assets/images/ExampleTeam.png"},
               { "type" : "h3", "text" : "Fighter Stats"},
-              { "type": "p",  "text": "Every fighter has a card with its stats:" },
+              { "type": "p",  "text": "Every fighter has a card with its stats." },
               { "type" : "img", "src" : "./src/assets/images/ExampleClass.png"},
-              { "type" : "ul", "items" : ["HEALTH: Starting health amount",
-                "MOV: Maximum movement distance per Movement Phase",
-                "HIT: Attack accuracy; added to a d6 roll during Combat Phase",
-                "DEF: Defense rating; added to a d6 roll when defending",
-                "DAMAGE: Amount of HEALTH lost by the target on a successful hit",
-                "RANGE: Maximum attack distance in one Combat Phase",
-                "AREA: Shape of the attack."]},
-              { "type": "p",  "text": "Types of AREA:" },
+              { "type" : "ul", "items" : ["HEALTH : Starting health amount",
+                "MOV : Maximum movement distance per Movement Phase",
+                "HIT : Attack accuracy; added to a d6 roll during Combat Phase",
+                "DEF : Defense rating; added to a d6 roll when defending",
+                "DAMAGE : Amount of HEALTH lost by the target on a successful hit",
+                "RANGE : Maximum attack distance in one Combat Phase",
+                "AREA : Shape of the attack."]},
+              { "type": "p",  "text": "Types of AREA" },
               { "type" : "ul", "items" : ["SINGLE - Hits one square",
                 "SPLASH - Hits one square plus the four orthogonal adjacent squares (N, E, S, W)",
                 "MIXED - The fighter may choose between SINGLE or SPLASH per attack"]}
+        ]
+      },
+      {
+        "title" : "Core Gameplay Loop",
+        "blocks" : [
+            { "type" : "h3", "text" : "At a Glance"},
+            { "type" : "ul", "items" : ["Decide Leading Player and Following Player",
+                "Leading Player Movement Phase",
+                "Following Movement Phase",
+                "Fate Deck Draw (If Included)",
+                "Apply Fate Deck Effects (If Included)",
+                "Leading Player Combat Phase",
+                "Following Player Combat Phase",
+                "Repeat"]},
+            { "type" : "h3", "text" : "In more Detail"},
+            { "type" : "h3", "text" : "Deciding Leading Player vs Following"},
+            { "type": "p",  "text": "The game starts with a d6 roll (1-3 vs 4-6), coin flip or similar 50/50 result deciding which player is the first and second to act." },
+            { "type" : "h3", "text" : "Movement Phase"},
+            { "type": "p",  "text": "The Movement Phase begins with the Leading Player first, then the Following Player." },
+            { "type": "p",  "text": "Each fighter on a team may be moved up to n squares. With n being dictated by the fighters MOV stat on their Base Class card." },
+            { "type": "p",  "text": "Once all fighters on the Leading Player’s team are moved, the Following player moves their own fighters." },
+            { "type" : "h4", "text" : "Example — Light Duelist"},
+            { "type": "pi",  "text": "MOV: 4 : This fighter may move up to 4 squares in total." },
+            { "type" : "h4", "text" : "Diagonal Movement"},
+            { "type": "pi",  "text": "Diagonal Movement is NOT allowed using the Core Rules. Manhattan style(orthogonal) is used to measure MOV distance." },
+            { "type" : "h3", "text" : "Fate Deck Phase"},
+            { "type": "p",  "text": "Each player will draw one card from the Fate Deck. All results of this card will be played out before proceeding with the next phase." },
+            { "type": "p",  "text": "After all effects are resolved, return all cards to the Fate Deck and reshuffle it." },
+            { "type" : "h4", "text" : "Example - The Leading Player draws the card : A Strong Gust"},
+            { "type": "p",  "text": "Card Text : Choose 1 straight line across the board(edge to edge). All fighters on that line MUST move by 1 square in a single direction of this card drawer’s choice. If that fighter is blocked by teammates, terrain or the battlefield’s edge, that fighter does NOT move." },
+            { "type": "p",  "text": "All fighters on that line are moved 1 square. Proceed to Following Player’s card draw." },
+            { "type" : "h4", "text" : "The Following Player draws the card : A Mild Drizzle"},
+            { "type": "p",  "text": "Card Text : A few raindrops fall, but nothing happens.)"},
+            { "type": "p",  "text": "No effect applied. Proceed to Combat Phase." },
+            { "type" : "h3", "text" : "Combat Phase"}
 
 
+            
+        ]
+      },
+      {
+        "title" : "Glossary",
+        "blocks" : [
+            { "type" : "h3", "text" : "Term Definitions"},
+            { "type": "p",  "text": "1 Full Round:" },
+            { "type" : "ul", "items" : [
+                "Leading Player Movement Phase",
+                "Following Movement Phase",
+                "Fate Deck Draw (draw, apply, return/shuffle)",
+                "Leading Player Combat Phase",
+                "Following Player Combat Phase",
+                "End of Round (clear temporary effects)"]},
+
+            { "type": "p",  "text": "Adjacent" },
+            { "type": "p",  "text": "Orthogonal neighbor only (no diagonals)" },
+            { "type": "p",  "text": "Line of Sight (LoS)" },
+            { "type": "p",  "text": "A straight line between starting and target squares (orthogonal or diagonal is allowed) with no High Terrain between attacker and target. Fighters do not block LoS." },
+            { "type": "p",  "text": "Shift" },
+            { "type": "p",  "text": "Forced movement of exactly n squares in a direction (N, S, E, W). If the destination is off-board or occupied, do not move." },
+            { "type": "p",  "text": "Global Direction" },
+            { "type": "p",  "text": "One direction(N, S, E, W) applied to all specified fighters." },
+            { "type": "p",  "text": "Fixed HIT (x)" },
+            { "type": "p",  "text": "Attacker’s total value for the attack is x, without modification." }
+            
         ]
       }
 

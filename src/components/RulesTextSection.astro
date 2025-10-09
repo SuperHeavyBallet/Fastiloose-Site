@@ -6,59 +6,93 @@ const NAME_RX_EXACT = /^Fastiloose!?$/i;
 
 // split on ANY of these tokens (capturing group keeps them in the array)
 const ALL_RX =
-  /(Fastiloose!?|\bHEALTH\b|\bMOV\b|\bHIT\b|\bDEF\b|\bRANGE\b|\bDAMAGE\b|\bAREA\b|\bBase Classes\b|\bFate Deck\b)/gi;
+  /(Fastiloose!?|\bHEALTH\b|\bMOV\b|\bHIT\b|\bDEF\b|\bRANGE\b|\bDAMAGE\b|\bAREA\b|\bBase Classes\b|\bFate Deck\b|\bSINGLE\b|\bSPLASH\b|\bMIXED\b)/gi;
 // exact check for a split chunk
 const ALL_EXACT =
-  /^(?:Fastiloose!?|HEALTH|MOV|HIT|DEF|RANGE|DAMAGE|AREA|Base Classes|Fate Deck)$/i;
-
+  /^(?:Fastiloose!?|HEALTH|MOV|HIT|DEF|RANGE|DAMAGE|AREA|Base Classes|Fate Deck|SINGLE|SPLASH|MIXED)$/;
 
 const sections = data.rules.map((r, i) => {
-  const slug = r.title.toLowerCase().replace(/\s+/g,"-").replace(/[^a-z0-9-]/g,"");
-  return { ...r, id: `section-${i+1}-${slug}` };
+  const slug = r.title
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "");
+  return { ...r, id: `section-${i + 1}-${slug}` };
 });
 ---
 
-
 <main class="rule-display">
-    {sections.map((s) => (
+  {
+    sections.map((s) => (
       <section id={s.id}>
         <h2>{s.title}</h2>
-  
+
         {s.blocks.map((b) => {
           if (b.type === "h3") {
             return (
               <h3>
-                {b.text.split(NAME_RX).map((chunk) =>
-                  NAME_RX_EXACT.test(chunk) ? <strong>{chunk}</strong> : chunk
-                )}
+                {b.text
+                  .split(NAME_RX)
+                  .map((chunk) =>
+                    NAME_RX_EXACT.test(chunk) ? <strong>{chunk}</strong> : chunk
+                  )}
               </h3>
             );
           }
-  
+
+          if (b.type === "h4") {
+            return (
+              <h4>
+                {b.text
+                  .split(NAME_RX)
+                  .map((chunk) =>
+                    NAME_RX_EXACT.test(chunk) ? <strong>{chunk}</strong> : chunk
+                  )}
+              </h4>
+            );
+          }
+
           if (b.type === "p") {
             return (
               <p>
-                {b.text.split(ALL_RX).map((chunk) =>
-                  ALL_EXACT.test(chunk) ? <strong>{chunk}</strong> : chunk
-                )}
+                {b.text
+                  .split(ALL_RX)
+                  .map((chunk) =>
+                    ALL_EXACT.test(chunk) ? <strong>{chunk}</strong> : chunk
+                  )}
               </p>
             );
           }
-  
+
+          if (b.type === "pi") {
+            return (
+              <p>
+                <i>
+                  {b.text
+                    .split(ALL_RX)
+                    .map((chunk) =>
+                      ALL_EXACT.test(chunk) ? <i>{chunk}</i> : chunk
+                    )}
+                </i>
+              </p>
+            );
+          }
+
           if (b.type === "ul") {
             return (
               <ul>
                 {b.items.map((it) => (
                   <li>
-                    {it.split(ALL_RX).map((chunk) =>
-                      ALL_EXACT.test(chunk) ? <strong>{chunk}</strong> : chunk
-                    )}
+                    {it
+                      .split(ALL_RX)
+                      .map((chunk) =>
+                        ALL_EXACT.test(chunk) ? <strong>{chunk}</strong> : chunk
+                      )}
                   </li>
                 ))}
               </ul>
             );
           }
-  
+
           if (b.type === "img") {
             return (
               <img
@@ -71,16 +105,27 @@ const sections = data.rules.map((r, i) => {
               />
             );
           }
-  
+
           return null;
         })}
       </section>
-    ))}
-  </main>
+    ))
+  }
+</main>
 
-  <style>
+<style>
+  img {
+    max-width: 10rem;
+  }
 
-    img{
-        max-width: 10rem;
-    }
-  </style>
+  h2 {
+    margin: 3rem 0rem 2rem 0rem;
+    padding-top: 2rem;
+    border-top: 1px solid black;
+    text-align: center;
+  }
+
+  h3 {
+    margin-top: 3rem;
+  }
+</style>
