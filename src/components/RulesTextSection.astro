@@ -6,10 +6,10 @@ const NAME_RX_EXACT = /^Fastiloose!?$/i;
 
 // split on ANY of these tokens (capturing group keeps them in the array)
 const ALL_RX =
-  /(Fastiloose!?|\bHEALTH\b|\bMOV\b|\bHIT\b|\bDEF\b|\bRANGE\b|\bDAMAGE\b|\bAREA\b|\bBase Classes\b|\bFate Deck\b|\bSINGLE\b|\bSPLASH\b|\bMIXED\b)/gi;
+  /(Fastiloose!?|\bHEALTH\b|\bMOV\b|\bHIT\b|\bDEF\b|\bRANGE\b|\bDAMAGE\b|\bAREA\b|\bBase Classes\b|\bFate Deck\b|\bSINGLE\b|\bSPLASH\b|\bMIXED\b|\bMovement Phase\b|\bCombat Phase\b)/gi;
 // exact check for a split chunk
 const ALL_EXACT =
-  /^(?:Fastiloose!?|HEALTH|MOV|HIT|DEF|RANGE|DAMAGE|AREA|Base Classes|Fate Deck|SINGLE|SPLASH|MIXED)$/;
+  /^(?:Fastiloose!?|HEALTH|MOV|HIT|DEF|RANGE|DAMAGE|AREA|Base Classes|Fate Deck|SINGLE|SPLASH|MIXED|Movement Phase|Combat Phase)$/;
 
 const sections = data.rules.map((r, i) => {
   const slug = r.title

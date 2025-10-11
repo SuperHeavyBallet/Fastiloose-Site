@@ -4,6 +4,16 @@ import HeadDescription from "../components/HeadDescription.astro";
 import ImageStrip from "../components/ImageStrip.astro";
 import NavBar from "../components/NavBar.astro";
 import "../fonts.css";
+
+import headPic1 from "../assets/images/8x8.png";
+import headPic2 from "../assets/images/8x8.png";
+import headPic3 from "../assets/images/8x8.png";
+
+const images = [
+  { src: headPic1, alt: "First image" },
+  { src: headPic2, alt: "Second image" },
+  { src: headPic3, alt: "Third image" },
+];
 ---
 
 <!doctype html>
@@ -19,8 +29,11 @@ import "../fonts.css";
     <NavBar />
     <div class="home-main">
       <HeroHeader />
-      <ImageStrip />
-      <HeadDescription />
+      <ImageStrip imageArray={images} />
+      <HeadDescription
+        headText="Fastiloose! is a lightweight skirmish engine that invites customisation."
+        headSubText="It’s fast to learn, quick to play, and easy to adapt. Some character tokens, a pen, paper, and a die. That’s all you need!"
+      />
     </div>
   </body>
 </html>

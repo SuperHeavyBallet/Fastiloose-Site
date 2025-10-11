@@ -1,8 +1,20 @@
 ---
+const { imageArray } = Astro.props;
+import { Image } from "astro:assets";
 ---
 
 <div>
-    <img src="#">
-    <img src="#">
-    <img src="#">
+  {
+    imageArray.map((img) => (
+      <Image src={img.src} alt={img.alt} class="stripImage" />
+    ))
+  }
 </div>
+
+<style>
+  .stripImage {
+    max-width: 10rem;
+    height: auto;
+    margin: 1rem;
+  }
+</style>

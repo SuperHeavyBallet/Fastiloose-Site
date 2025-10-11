@@ -1,10 +1,13 @@
+---
+const { headText, headSubText } = Astro.props;
+---
+
 <div class="head-description">
   <h3>
-    Fastiloose! is a lightweight skirmish engine that invites customisation.
+    {headText}
   </h3>
 
   <p>
-    It’s fast to learn, quick to play, and easy to adapt. Some character tokens,
-    a pen, paper, and a die. That’s all you need!
+    {headSubText}
   </p>
 </div>
