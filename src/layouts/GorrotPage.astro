@@ -5,6 +5,17 @@ import ImageStrip from "../components/ImageStrip.astro";
 import NavBar from "../components/NavBar.astro";
 import GorrotHeader from "../components/GorrotHeader.astro";
 import "../fonts.css";
+import "../reset.css";
+
+import headPic1 from "../assets/images/8x8.png";
+import headPic2 from "../assets/images/8x8.png";
+import headPic3 from "../assets/images/8x8.png";
+
+const images = [
+  { src: headPic1, alt: "First image" },
+  { src: headPic2, alt: "Second image" },
+  { src: headPic3, alt: "Third image" },
+];
 ---
 
 <!doctype html>
@@ -20,7 +31,7 @@ import "../fonts.css";
     <NavBar />
     <div class="gorrot-main">
       <GorrotHeader />
-      <ImageStrip />
+      <ImageStrip imageArray={images} />
       <HeadDescription />
     </div>
   </body>

@@ -6,6 +6,31 @@ import NavBar from "../components/NavBar.astro";
 import GorrotHeader from "../components/GorrotHeader.astro";
 import AboutHeader from "../components/AboutHeader.astro";
 import "../fonts.css";
+import "../reset.css";
+
+import headPic1 from "../assets/images/8x8.png";
+import headPic2 from "../assets/images/8x8.png";
+import headPic3 from "../assets/images/8x8.png";
+import TitleTextBlock from "../components/TitleTextBlock.astro";
+
+const images = [
+  { src: headPic1, alt: "First image" },
+  { src: headPic2, alt: "Second image" },
+  { src: headPic3, alt: "Third image" },
+];
+
+const aboutDescriptionTitle1 = "The idea behind it.";
+const aboutDescriptionText1 =
+  "Modern wargames have grown dense and careful. Fastiloose! started as a reaction. It presents a way to bring back the quick-and-dirty fun of kitchen-table play, where rules are flexible, jokes are canon, and a character named Bob can achieve immortality by throwing sticks at mechs.";
+const aboutDescriptionTitle2 = "What makes it different?";
+const aboutDescriptionText2 =
+  "It’s grid-based, designed for two players, and scales easily from half-hour duels to hour-long scrums. Every rule is written for hacking: change stats, add new gear, invent your own factions. The system will hold.";
+const aboutDescriptionTitle3 = "The community tone.";
+const aboutDescriptionText3 =
+  "Fastiloose! thrives on community mischief. Joke teams, house rules, and home-printed cards are the lifeblood of the game. If your table invents something ridiculous, congratulations: you’re doing it right.";
+const aboutDescriptionTitle4 = "The creator";
+const aboutDescriptionText4 =
+  "Fastiloose! was written, tested, and occasionally broken by Alexander Gorham, a designer who believes rules should be read in the same tone as good conversation; clear, clever, and never afraid of a bad joke.";
 ---
 
 <!doctype html>
@@ -21,24 +46,43 @@ import "../fonts.css";
     <NavBar />
     <div class="about-main">
       <AboutHeader />
-      <ImageStrip />
-      <HeadDescription />
+      <ImageStrip imageArray={images} />
+      <TitleTextBlock
+        title={aboutDescriptionTitle1}
+        text={aboutDescriptionText1}
+      />
+      <TitleTextBlock
+        title={aboutDescriptionTitle2}
+        text={aboutDescriptionText2}
+      />
+      <TitleTextBlock
+        title={aboutDescriptionTitle3}
+        text={aboutDescriptionText3}
+      />
+      <TitleTextBlock
+        title={aboutDescriptionTitle4}
+        text={aboutDescriptionText4}
+      />
     </div>
   </body>
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .about-main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0rem 35rem;
+      padding: 0rem 2rem;
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+    }
+  </style>
 </html>
-
-<style>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  .about-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-</style>

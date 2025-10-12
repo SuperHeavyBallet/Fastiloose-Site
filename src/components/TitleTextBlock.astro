@@ -1,0 +1,19 @@
+---
+const { thisClass, title, text } = Astro.props;
+---
+
+<div class="title-text-block">
+  <h3>{title}</h3>
+  <p>{text}</p>
+</div>
+
+<style>
+  .title-text-block {
+    margin-bottom: 2rem;
+  }
+  .title-text-block h3 {
+    margin-bottom: 0.5rem;
+  }
+  .title-text-block p {
+  }
+</style>
