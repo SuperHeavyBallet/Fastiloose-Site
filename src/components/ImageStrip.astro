@@ -1,20 +1,38 @@
 ---
-const { imageArray } = Astro.props;
+const { imageArray, imageSubtitle } = Astro.props;
 import { Image } from "astro:assets";
 ---
 
-<div>
-  {
-    imageArray.map((img) => (
-      <Image src={img.src} alt={img.alt} class="stripImage" />
-    ))
-  }
+<div class="imageHolder">
+  <div class="imageStrip">
+    {
+      imageArray.map((img) => (
+        <Image src={img.src} alt={img.alt} class="stripImage" />
+      ))
+    }
+  </div>
+  <p>{imageSubtitle}</p>
 </div>
 
 <style>
+  .imageHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+  }
+
+  .imageStrip {
+    display: flex;
+    flex-direction: row;
+  }
   .stripImage {
     max-width: 10rem;
     height: auto;
     margin: 1rem;
+  }
+  .stripImage p {
+    text-align: center;
   }
 </style>

@@ -1,12 +1,6 @@
 {
     "rules": [
-      {
-        "title": "Fastiloose!",
-      "blocks": [
-        { "type": "h3", "text": "Fastiloose!" },
-        { "type": "p",  "text": "Fastiloose! is a lightweight skirmish engine that invites customisation. It’s fast to learn, quick to play, and easy to adapt. Bring a pen, paper, and a die. That’s all you need!" }
-      ]
-      },
+      
       {
         "title": "Intro",
         "blocks": [
