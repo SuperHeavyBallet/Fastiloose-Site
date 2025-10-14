@@ -6,7 +6,7 @@ import NavBar from "../components/NavBar.astro";
 import GorrotHeader from "../components/GorrotHeader.astro";
 import "../fonts.css";
 import "../reset.css";
-
+import TitleTextBlock from "../components/TitleTextBlock.astro";
 import headPic1 from "../assets/images/8x8.png";
 import headPic2 from "../assets/images/8x8.png";
 import headPic3 from "../assets/images/8x8.png";
@@ -16,6 +16,10 @@ const images = [
   { src: headPic2, alt: "Second image" },
   { src: headPic3, alt: "Third image" },
 ];
+
+const gorrotTitle = "What is Gorrot?";
+const gorrotDescription =
+  "Gorrot is a planned Expansion for Fastiloose!. Gorrot takes the underlying framework and layers an aesthetic over the top of it, with customisations that give real thematic coherence to a single vision, without upsetting the system that fuels it. Gorrot serves as an example of how powerful Fastiloose! can be, but also as an excuse for me to come up with crazy ideas.";
 ---
 
 <!doctype html>
@@ -30,9 +34,9 @@ const images = [
   <body>
     <NavBar />
     <div class="gorrot-main">
-      <GorrotHeader />
+      <HeroHeader headerText="Gorrot" />
       <ImageStrip imageArray={images} />
-      <HeadDescription />
+      <TitleTextBlock title={gorrotTitle} text={gorrotDescription} />
     </div>
   </body>
 </html>
